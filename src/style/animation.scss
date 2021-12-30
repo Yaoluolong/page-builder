@@ -1,0 +1,19 @@
+/* 一般动画 */
+.transition-common {
+  transition: all 0.5s ease;
+}
+.transition-common--fast {
+  transition: all 0.3s ease;
+}
+
+/* 淡入淡出 */
+.transition-fade{
+  &-enter-active,
+  &-leave-active{
+    transition: opacity 0.3s ease;
+  }
+  &-enter-from,
+  &-leave-to {
+  opacity: 0;
+}
+}

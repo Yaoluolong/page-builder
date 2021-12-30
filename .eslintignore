@@ -1,0 +1,6 @@
+build/*.js
+vue.config.js
+src/components/global/Icon
+src/assets
+public
+dist
