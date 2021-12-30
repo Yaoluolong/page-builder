@@ -1,13 +1,5 @@
 <template>
   <div class="sidebar transition-common" :class="{ 'is-collapse': isCollapse }">
-    <div
-      class="translate transition-common"
-      :class="{ 'is-collapse': isCollapse }"
-    >
-      <el-button type="text" @click="handleCollapse">
-        <Icon name="el-d-arrow-left" />
-      </el-button>
-    </div>
     <transition name="transition-fade">
       <div v-if="!isCollapse" class="menu" accordion>
         <div style="margin-bottom: 10px">
@@ -49,9 +41,14 @@ export default {
   components: {
     DraggableComponent
   },
+  props: {
+    isCollapse: {
+      type: Boolean,
+      default: false
+    }
+  },
   data() {
     return {
-      isCollapse: false,
       activeNames: null,
       searchKey: null,
       menu: [],
@@ -87,7 +84,7 @@ export default {
   },
   methods: {
     handleCollapse() {
-      this.isCollapse = !this.isCollapse
+      // this.isCollapse = !this.isCollapse
       this.$emit('handleCollapse')
     }
   }
@@ -108,16 +105,6 @@ export default {
   width: 300px;
   height: 100%;
   box-shadow: 1px 0px 10px var(--el-text-color-placeholder);
-  .translate {
-    position: fixed;
-    top: 50%;
-    left: 280px;
-    transform: translateY(-50%);
-  }
-  .is-collapse {
-    left: 20px;
-    transform: translateY(-50%) rotate(180deg);
-  }
   .menu {
     height: inherit;
     padding: 10px 20px;
@@ -125,6 +112,7 @@ export default {
     flex-direction: column;
     .components {
       display: flex;
+      flex-wrap: wrap;
     }
   }
 }

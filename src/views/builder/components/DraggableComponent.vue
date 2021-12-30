@@ -40,10 +40,10 @@ export default {
 <style lang="scss" scoped>
 .card {
   cursor: pointer;
-  padding: 10px 15px;
+  padding: 10px 23.3px;
   &:hover {
     color: #fff;
-    background: var(--el-color-primary-light-4);
+    background: var(--el-color-primary);
   }
   .title {
     text-align: center;

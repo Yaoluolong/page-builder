@@ -1,0 +1,22 @@
+/* scroll-bar */
+::-webkit-scrollbar {
+  width: 6px;
+  &:horizontal {
+    height: 6px;
+  }
+  &-thumb {
+    border-radius: 5px;
+    width: 6px;
+    background: #b4bccc;
+  }
+  &-corner {
+    background: #fff;
+  }
+  &-track {
+    background: #fff;
+  }
+  &-track-piece {
+    background: #fff;
+    width: 6px;
+  }
+}

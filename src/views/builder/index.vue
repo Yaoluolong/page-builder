@@ -1,20 +1,22 @@
 <template>
-  <div class="container">
-    <side-bar @handle-collapse="isCollapse = !isCollapse" />
+  <div class="wrap">
+    <SideBar :is-collapse="isCollapse" @handle-collapse="isCollapse = !isCollapse" />
     <div class="main transition-common" :class="{ 'is-collapse': isCollapse }">
-      <div class="container">
-        123
-        <Icon name="form-button"></Icon>
-      </div>
+      <TopBar @handle-collapse="isCollapse = !isCollapse" />
+      <Container />
     </div>
   </div>
 </template>
 
 <script>
-import SideBar from './components/SideBar.vue'
+import SideBar from './components/SideBar'
+import TopBar from './components/TopBar'
+import Container from './components/Container'
 export default {
   components: {
-    SideBar
+    SideBar,
+    TopBar,
+    Container
   },
   data() {
     return {
@@ -25,17 +27,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container {
-  display: flex;
+.wrap {
   height: 100%;
   .main {
+    height: inherit;
     margin-left: 300px;
-    padding: 10px 20px;
-    width: 100%;
-    background: #f6f8f9;
-    .container {
-      background: var(--el-color-white);
-    }
   }
   .is-collapse {
     margin-left: 0;

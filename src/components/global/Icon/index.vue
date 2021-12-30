@@ -1,18 +1,16 @@
 <template>
-  <div>
-    <el-icon v-if="elIconName" :size="size" :color="color" :style="style">
-      <component :is="elIconName"></component>
-    </el-icon>
-    <i
-      class="el-icon"
-      :style="{ '--font-size': size + 'px', color: color }"
-      v-else
-    >
-      <svg aria-hidden="true">
-        <use :xlink:href="'#icon-' + name" />
-      </svg>
-    </i>
-  </div>
+  <el-icon v-if="elIconName" :size="size" :color="color" :style="style">
+    <component :is="elIconName"></component>
+  </el-icon>
+  <i
+    class="el-icon"
+    :style="{ '--font-size': size + 'px', color: color }"
+    v-else
+  >
+    <svg aria-hidden="true">
+      <use :xlink:href="'#icon-' + name" />
+    </svg>
+  </i>
 </template>
 
 <script>
@@ -38,7 +36,7 @@ export default defineComponent({
     },
     color: {
       type: String,
-      default:'var(--el-color-primary)'
+      default: 'var(--el-color-primary)'
     }
   },
   computed: {

@@ -6,6 +6,7 @@ import store from './store'
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 // 引入自定义样式
+import './style/index.scss'
 import './style/animation.scss'
 // 引入自定义图标
 import '@/assets/icons'
