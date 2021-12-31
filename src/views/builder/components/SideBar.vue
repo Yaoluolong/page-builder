@@ -23,8 +23,7 @@
               <DraggableComponent
                 v-for="component in item.children"
                 :key="component.name"
-                :name="component.name"
-                :title="component.title"
+                :component="component"
               />
             </div>
           </el-collapse-item>
@@ -34,6 +33,7 @@
   </div>
 </template>
 <script>
+import Components from '@/assets/configJson/components.json'
 import DraggableComponent from './DraggableComponent.vue'
 
 export default {
@@ -52,40 +52,7 @@ export default {
       activeNames: null,
       searchKey: null,
       menu: [],
-      componentsList: [
-        {
-          name: 'basic',
-          title: '基础组件',
-          children: [
-            {
-              name: 'button',
-              title: '按钮'
-            },
-            {
-              name: 'button',
-              title: '按钮'
-            },
-            {
-              name: 'button',
-              title: '按钮'
-            },
-            {
-              name: 'button',
-              title: '按钮'
-            },
-            {
-              name: 'button',
-              title: '按钮'
-            }
-          ]
-        }
-      ]
-    }
-  },
-  methods: {
-    handleCollapse() {
-      // this.isCollapse = !this.isCollapse
-      this.$emit('handleCollapse')
+      componentsList: Components
     }
   }
 }

@@ -1,0 +1,14 @@
+[
+  {
+    "name": "basic",
+    "title": "基础组件",
+    "children": [
+      {
+        "name": "button",
+        "title": "按钮",
+        "template": "<el-button>按钮</el-button>",
+        "property": {}
+      }
+    ]
+  }
+]

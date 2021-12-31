@@ -2,17 +2,18 @@
   <div
     class="card transition-common--fast"
     draggable="true"
+    @dragstart="drag"
     @mouseover="hover = true"
     @mouseleave="hover = false"
   >
     <div>
       <Icon
-        :name="name"
+        :name="component.name"
         :size="40"
         :color="hover ? '#fff' : 'var(--el-color-primary)'"
       />
     </div>
-    <div class="title">{{ title }}</div>
+    <div class="title">{{ component.title }}</div>
   </div>
 </template>
 
@@ -20,18 +21,19 @@
 export default {
   name: 'DraggableComponent',
   props: {
-    name: {
-      type: String,
-      required: true
-    },
-    title: {
-      type: String,
+    component: {
+      type: Object,
       required: true
     }
   },
   data() {
     return {
       hover: false
+    }
+  },
+  methods: {
+    drag(e) {
+      e.dataTransfer.setData('component', JSON.stringify(this.component))
     }
   }
 }

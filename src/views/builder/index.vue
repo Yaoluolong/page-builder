@@ -1,6 +1,6 @@
 <template>
   <div class="wrap">
-    <SideBar :is-collapse="isCollapse" @handle-collapse="isCollapse = !isCollapse" />
+    <SideBar :is-collapse="isCollapse" />
     <div class="main transition-common" :class="{ 'is-collapse': isCollapse }">
       <TopBar @handle-collapse="isCollapse = !isCollapse" />
       <Container />

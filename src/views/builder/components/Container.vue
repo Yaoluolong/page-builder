@@ -1,6 +1,9 @@
 <template>
   <div class="container">
-    <div class="content" @drop="handleDrop" @dragover="allowDrop">content</div>
+    <div class="content" @drop="drop" @dragover="allowDrop">
+      new Vue
+      <el-button>按钮</el-button>
+    </div>
   </div>
 </template>
 
@@ -13,8 +16,8 @@ export default {
     },
     drop(e) {
       e.preventDefault()
-      var data = e.dataTransfer.getData('Text')
-      e.target.appendChild(document.getElementById(data))
+      var data = e.dataTransfer.getData('component')
+      console.log(data)
     }
   }
 }
