@@ -1,4 +1,10 @@
-# page-builder
+# 页面生成器 | page-builder
+
+## 描述 | Describe
+
+这是一个旨在建设一个Vue页面可视化编辑的Web项目，目前尚处于早期开发阶段。
+
+This is a Web page to build a visual editing for vue.It is still in the early stages of development.
 
 ## Project setup
 ```
