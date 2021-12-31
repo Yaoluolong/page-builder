@@ -33,7 +33,7 @@
   </div>
 </template>
 <script>
-import Components from '@/assets/configJson/components.json'
+import componentsList from '@/assets/configJson/components.json'
 import DraggableComponent from './DraggableComponent.vue'
 
 export default {
@@ -52,7 +52,7 @@ export default {
       activeNames: null,
       searchKey: null,
       menu: [],
-      componentsList: Components
+      componentsList
     }
   }
 }

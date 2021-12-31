@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="content" @drop="drop" @dragover="allowDrop">
+    <div id="container" class="content" @drop="drop" @dragover="allowDrop">
       new Vue
       <el-button>按钮</el-button>
     </div>
@@ -8,15 +8,22 @@
 </template>
 
 <script>
+import { createApp } from '@vue/runtime-dom'
 export default {
   name: 'Container',
+  data() {
+    return {
+      a: '123'
+    }
+  },
   methods: {
     allowDrop(e) {
       e.preventDefault()
     },
     drop(e) {
       e.preventDefault()
-      var data = e.dataTransfer.getData('component')
+      const data = e.dataTransfer.getData('component')
+      console.log(createApp)
       console.log(data)
     }
   }
